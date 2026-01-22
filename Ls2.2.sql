@@ -1,7 +1,6 @@
-CREATE TABLE products (
-ProductID VARCHAR(10),
-FullName VARCHAR (30),
-PRICE DECIMAL(10,2),
-Quantity INT UNSIGNED,
-StockQuantity INT UNSIGNED
+CREATE TABLE products(
+ProductID VARCHAR(10) PRIMARY KEY NOT NULL,
+ProductName VARCHAR(100) NOT NULL,
+Price DECIMAL(10,2) NOT NULL,
+StockQuantity INT 
 );
