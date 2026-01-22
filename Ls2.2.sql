@@ -1,0 +1,7 @@
+CREATE TABLE products (
+ProductID VARCHAR(10),
+FullName VARCHAR (30),
+PRICE DECIMAL(10,2),
+Quantity INT UNSIGNED,
+StockQuantity INT UNSIGNED
+);
