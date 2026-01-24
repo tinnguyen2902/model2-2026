@@ -1,0 +1,26 @@
+CREATE TABLE books (
+BookID VARCHAR(100) PRIMARY KEY NOT NULL,
+AuthorName VARCHAR(100) NOT NULL,
+PublishYear YEAR NOT NULL,
+Location VARCHAR(100) NOT NULL
+);
+CREATE TABLE Readers (
+ReadersID VARCHAR(100) PRIMARY KEY NOT NULL,
+FullName VARCHAR(100) NOT NULL,
+Address VARCHAR(200) NOT NULL,
+TEL VARCHAR(20) NOT NULL
+);
+CREATE TABLE Borrowings (
+BookID VARCHAR(100) NOT NULL,
+ReadersID VARCHAR(100) NOT NULL,
+BorrowCount INT,
+BorrowDate DATETIME NOT NULL,
+ReturnDate DATETIME NOT NULL,
+-- khai báo khóa chính
+PRIMARY KEY (ReadersID, BookID),
+-- thiết lập ràng buộc
+CONSTRAINT reins FOREIGN KEY (BookID)
+REFERENCES books(BookID),
+CONSTRAINT reinsPeople FOREIGN KEY (ReadersID)
+REFERENCES readers(ReadersID)
+);
